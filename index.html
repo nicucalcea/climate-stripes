@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Stripes Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">        <header>
+            <h1>Climate Stripes Viewer</h1>
+            <p>Explore temperature trends across Eastern European countries through climate stripes visualizations</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <label for="country-select">Select a Country:</label>
+                <select id="country-select">
+                    <option value="">Choose a country...</option>
+                </select>
+            </div>
+
+            <div id="charts-container" class="charts-container" style="display: none;">
+                <div class="chart-section">
+                    <h2 id="country-title"></h2>
+                    
+                    <div class="chart-group">                        <div class="chart-item">
+                            <h3>Climate Stripes (Clean)</h3>
+                            <div class="image-container">
+                                <img id="clean-chart" src="" alt="Clean climate stripes chart">
+                                <div class="image-overlay">
+                                    <button class="download-btn" id="download-clean">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="7,10 12,15 17,10"></polyline>
+                                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                                        </svg>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="chart-description">Temperature stripes without labels — pure visualization of temperature anomalies over time.</p>
+                        </div>
+
+                        <div class="chart-item">
+                            <h3>Climate Stripes (with Labels)</h3>
+                            <div class="image-container">
+                                <img id="labels-chart" src="" alt="Climate stripes chart with labels">
+                                <div class="image-overlay">
+                                    <button class="download-btn" id="download-labels">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="7,10 12,15 17,10"></polyline>
+                                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                                        </svg>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="chart-description">Temperature stripes with year labels and temperature scale for better interpretation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading charts...</p>
+            </div>
+
+            <div id="error" class="error" style="display: none;">
+                <p>Unable to load charts for the selected country. Please try again.</p>
+            </div>
+        </main>        <footer>
+            <p>Climate stripes visualization showing temperature anomalies over time. Data source: Berkeley Earth.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

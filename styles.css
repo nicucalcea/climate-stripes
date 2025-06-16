@@ -1,0 +1,303 @@
+/* Root Variables - Matching blog.samizdata.co theme */
+:root {
+    --bg-primary: #FAF9F6;
+    --bg-secondary: #ebeae7;
+    --bg-elevated: #faf9f6;
+    --text-primary: #363737;
+    --text-secondary: #757575;
+    --text-tertiary: #b6b6b6;
+    --accent-color: #9f1853;
+    --accent-darken: #891547;
+    --border-color: rgba(200, 199, 197, 0.5);
+    --border-subtle: rgba(200, 199, 197, 0.5);
+    --shadow-light: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-medium: 0 2px 8px rgba(0,0,0,0.08);
+    --border-radius: 6px;
+    --font-family-body: 'SF Pro Display', -apple-system, system-ui, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --font-family-heading: 'Roboto Slab', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-body);
+    line-height: var(--line-height-base);
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    min-height: 100vh;
+    font-size: var(--font-size-base);
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+header h1 {
+    font-family: var(--font-family-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.controls {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.controls label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.controls select {
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-width: 280px;
+    font-family: var(--font-family-body);
+}
+
+.controls select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(159, 24, 83, 0.1);
+}
+
+.controls select:hover {
+    border-color: var(--text-secondary);
+}
+
+.charts-container {
+    animation: none;
+}
+
+.chart-section h2 {
+    text-align: center;
+    font-family: var(--font-family-heading);
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.chart-group {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.chart-item {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin-bottom: 40px;
+    transition: none;
+}
+
+.chart-item:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.chart-item h3 {
+    font-family: var(--font-family-heading);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.image-container {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-subtle);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: none;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.download-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s ease;
+    font-family: var(--font-family-body);
+}
+
+.download-btn:hover {
+    background: var(--accent-darken);
+    transform: none;
+    box-shadow: none;
+}
+
+.chart-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    font-style: normal;
+}
+
+.loading {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--bg-secondary);
+    border-top: 2px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.error {
+    text-align: center;
+    padding: 40px;
+    color: #d32f2f;
+    font-size: 1rem;
+    background: #ffeaea;
+    border: 1px solid #ffcdd2;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: normal;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    header {
+        padding: 20px 0;
+        margin-bottom: 40px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .chart-item {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .controls select {
+        min-width: auto;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+    }
+    
+    header h1 {
+        font-size: 1.9rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    .chart-item {
+        padding: 15px;
+    }
+    
+    .chart-section h2 {
+        font-size: 1.8rem;
+    }
+}
